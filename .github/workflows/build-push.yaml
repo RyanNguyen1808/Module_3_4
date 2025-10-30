@@ -37,7 +37,7 @@ jobs:
 
       - name: Push Docker Image to Amazon ECR
         env:
-          FULL_IMAGE_NAME: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          FULL_IMAGE_NAME: ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
         run: |
           # The push command uses the fully qualified name to send the image
           docker push $FULL_IMAGE_NAME
