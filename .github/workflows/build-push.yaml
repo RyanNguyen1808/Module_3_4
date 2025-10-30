@@ -9,6 +9,7 @@ env:
 
 jobs:
   build-and-push:
+    if: "!contains(github.event.head_commit.message, '[skip cicd]')"
     name: Build, Tag, and Push
     runs-on: ubuntu-latest
     
